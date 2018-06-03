@@ -2,9 +2,15 @@ import React from 'react';
 import './NumPad.css';
 import NumButton from './NumButton';
 
+function Display(props) {
+    return (
+        <div className="display">{Number(props.guess)}</div>
+    );
+}
+
 function NumPad(props) {
     // Extract buttonHandlers from props.
-    const { buttonHandlers } = props;
+    const { buttonHandlers, guess } = props;
     const {onNumBtnClick, onEnterBtnClick, onClrBtnClick} = buttonHandlers;
 
     // Setup the NumPad button rows.
@@ -26,6 +32,7 @@ function NumPad(props) {
     // Construct the NumPad div.
     return (
         <div className="numpad">
+            <Display guess={guess} />
             <div className="row">{firstRowBtns}</div>
             <div className="row">{secondRowBtns}</div>
             <div className="row">{thirdRowBtns}</div>
