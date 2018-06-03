@@ -47,7 +47,6 @@ class App extends React.Component {
 
         // Check if current guess matches the target.
         const correct = isCorrect(guess, target);
-        console.log(correct.toString());
 
         this.setState({
             iteration: iteration + 1,
@@ -74,7 +73,6 @@ class App extends React.Component {
                     <Header haveWon={haveWon} />
                     <Hint guess={lastGuess} target={target} />
 
-                    <div className="row center">Target: {target}</div>
                 </div>
 
                 <div className="input">
