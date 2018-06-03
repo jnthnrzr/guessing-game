@@ -1,0 +1,32 @@
+.button {
+    --size: 2.25em;
+    border: 1px solid snow;
+    border-radius: 25%;
+    background-color: silver;
+    color: snow;
+    font-size: 1.5em;
+    margin: 1px 1px;
+    width: var(--size);
+    height: var(--size);
+}
+
+.clear {
+    background-color: orangered;
+}
+
+.enter {
+    background-color: green;
+}
+
+.num-button {
+    background-color: silver;
+}
+
+button:hover {
+    background: #e0e0e0;
+}
+
+button:focus {
+    outline: 1px solid #efefef;
+    outline-offset: -3px;
+}
