@@ -7,9 +7,9 @@ function Hint(props) {
 
     return (
         <div className="hint">
-            <div>Your Last Guess:</div>
-            <div>{guess}</div>
-            <div>{hint}</div>
+            Your Last Guess:<br/>
+            {guess}<br/>
+            {hint}
         </div>
     );
 }
