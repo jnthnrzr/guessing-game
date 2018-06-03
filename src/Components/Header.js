@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 
 function Header(props) {
-    const { haveWon } = props;
+    const { haveWon, iteration, target } = props;
     const min = 0, max = 100, count = 10;
 
     const instruction = (
@@ -11,7 +11,14 @@ function Header(props) {
         </div>
     );
 
-    const description = haveWon ? "You've won!" : instruction;
+    const stillInTheGame = iteration < 10;
+    const message = haveWon ? "You've won!" : instruction;
+    const ranOutOfTries = (
+        <div>
+            You ran out of tries.<br/> The number was {target}.
+        </div>
+    );
+    const description = stillInTheGame ? message : ranOutOfTries;
 
     return (
         <h3 className="header">

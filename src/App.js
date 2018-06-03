@@ -47,18 +47,20 @@ class App extends React.Component {
 
         // Check if current guess matches the target.
         const correct = isCorrect(guess, target);
+        const nextIteration = correct ? 0 : iteration + 1;
 
         this.setState({
-            iteration: iteration + 1,
+            iteration: nextIteration,
             lastGuess: guess,
             guess: 0,
             haveWon: correct,
+            target: getRandomInt(),
         });
     }
 
     // TODO delete target div.
     render() {
-        const { guess, lastGuess, target, haveWon } = this.state;
+        const { guess, lastGuess, target, haveWon, iteration } = this.state;
 
         const buttonHandlers = {
             onNumBtnClick: this.onNumBtnClick,
@@ -70,13 +72,12 @@ class App extends React.Component {
             <div className="App">
 
                 <div className="output">
-                    <Header haveWon={haveWon} />
-                    <Hint guess={lastGuess} target={target} />
-
+                    <Header haveWon={haveWon} iteration={iteration} target={target} />
+                    <Hint guess={lastGuess} target={target} haveWon={haveWon} />
                 </div>
 
                 <div className="input">
-                    <NumPad guess={guess} buttonHandlers={buttonHandlers} />
+                    <NumPad guess={guess} buttonHandlers={buttonHandlers} iteration={iteration} />
                 </div>
 
             </div>

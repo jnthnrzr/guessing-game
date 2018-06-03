@@ -2,12 +2,13 @@ import React from 'react';
 import './Hint.css';
 
 function Hint(props) {
-    const { guess, target } = props;
-    const hint = (guess < target) ? "Too Low" : "Too High";
+    const { guess, target, haveWon } = props;
+    const guessHeader = haveWon ? "Answer: " : "Your Last Guess: ";
+    const hint = haveWon ? "" : ((guess < target) ? "Too Low" : "Too High");
 
     return (
         <div className="hint">
-            Your Last Guess:<br/>
+            {guessHeader}
             {guess}<br/>
             {hint}
         </div>
