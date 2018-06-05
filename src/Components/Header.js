@@ -3,7 +3,7 @@ import './Header.css';
 
 function Header(props) {
     const { haveWon, iteration, target } = props;
-    const min = 0, max = 100, count = 10;
+    const min = 0, max = 100, count = 10 - iteration;
 
     const instruction = (
         <div>
