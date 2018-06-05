@@ -10,15 +10,6 @@
     height: var(--size);
 }
 
-@media (min-width: 500px) {
-    .button {
-        --size: 2.5em;
-        width: var(--size);
-        height: var(--size);
-        font-size: 1.25em;
-    }
-}
-
 .clear {
     background-color: orangered;
 }

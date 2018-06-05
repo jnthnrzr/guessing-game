@@ -58,7 +58,6 @@ class App extends React.Component {
         });
     }
 
-    // TODO delete target div.
     render() {
         const { guess, lastGuess, target, haveWon, iteration } = this.state;
 
