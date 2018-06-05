@@ -1,8 +1,8 @@
 .button {
     --size: 2.25em;
     border: 1px solid snow;
-    border-radius: 25%;
-    background-color: silver;
+    border-radius: 100%;
+    background-color: #d5d5d5;
     color: snow;
     font-size: 1.25em;
     margin: 1px 1px;
@@ -11,22 +11,29 @@
 }
 
 .clear {
-    background-color: orangered;
+    background-color: #f68f24;
 }
 
 .enter {
-    background-color: green;
+    background-color: #00701a;
 }
 
 .num-button {
     background-color: silver;
 }
 
-button:hover {
-    background: #e0e0e0;
+.clear:hover {
+    background: #ffae59;
+}
+
+.num-button:hover {
+    background: #e4e4e4;
+}
+
+.enter:hover {
+    background: green;
 }
 
 button:focus {
-    outline: 1px solid #efefef;
-    outline-offset: -3px;
+    outline: 0;
 }
