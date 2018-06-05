@@ -20,8 +20,8 @@ class App extends React.Component {
             iteration: 0,
             haveWon: false,
             target: getRandomInt(),
-            guess: 0,
-            lastGuess: 0,
+            guess: null,
+            lastGuess: null,
         };
         this.onNumBtnClick = this.onNumBtnClick.bind(this);
         this.onClrBtnClick = this.onClrBtnClick.bind(this);
@@ -60,7 +60,7 @@ class App extends React.Component {
 
     render() {
         const { guess, lastGuess, target, haveWon, iteration } = this.state;
-
+        const firstTry = iteration === 0;
         const buttonHandlers = {
             onNumBtnClick: this.onNumBtnClick,
             onEnterBtnClick: this.onEnterBtnClick,
@@ -72,7 +72,7 @@ class App extends React.Component {
 
                 <div className="output">
                     <Header haveWon={haveWon} iteration={iteration} target={target} />
-                    <Hint guess={lastGuess} target={target} haveWon={haveWon} />
+                    {!firstTry && <Hint guess={lastGuess} target={target} haveWon={haveWon} />}
                 </div>
 
                 <div className="input">
