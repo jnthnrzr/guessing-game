@@ -30,6 +30,6 @@
     .input, .output {
         width: 50%;
         height: 100vh;
-        font-size: 2rem;
+        font-size: 1.125em;
     }
 }
