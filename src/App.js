@@ -71,7 +71,7 @@ class App extends React.Component {
             <div className="App">
 
                 <div className="output">
-                    <Header haveWon={haveWon} iteration={iteration} target={target} />
+                    <Header lastGuess={lastGuess} haveWon={haveWon} iteration={iteration} target={target} />
                     {!firstTry && <Hint guess={lastGuess} target={target} haveWon={haveWon} />}
                 </div>
 
