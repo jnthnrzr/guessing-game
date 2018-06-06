@@ -26,6 +26,23 @@
     background-color: #439688;
 }
 
+.reload {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    border: 0;
+}
+
+.reload button {
+    padding: 1em;
+    border-radius: 8px;
+    border: 1px solid darkslategray;
+    background-color: green;
+    color: lightgoldenrodyellow;
+    font-size: 1.25em;
+}
+
 @media screen and (min-width: 500px) {
     .input, .output {
         width: 50%;

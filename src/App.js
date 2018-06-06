@@ -13,6 +13,14 @@ const getRandomInt = (min = 0, max = 100) => {
     return Math.floor(Math.random() * (max - min)) + min;
 };
 
+const Reload = () => (
+    <div className="reload">
+        <a href="/">
+            <button>Reset &#x21bb;</button>
+        </a>
+    </div>
+);
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -75,7 +83,8 @@ class App extends React.Component {
                 </div>
 
                 <div className="input">
-                    <NumPad guess={guess} buttonHandlers={buttonHandlers} iteration={iteration} />
+                    {!haveWon && <NumPad guess={guess} buttonHandlers={buttonHandlers} iteration={iteration} />}
+                    {haveWon && <Reload />}
                 </div>
 
             </div>
