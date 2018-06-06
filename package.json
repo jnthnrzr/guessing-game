@@ -2,6 +2,7 @@
   "name": "guessing-game",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jnthnrzr.github.io/guessing-game",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
