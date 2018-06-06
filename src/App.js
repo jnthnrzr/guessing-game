@@ -54,7 +54,6 @@ class App extends React.Component {
             lastGuess: guess,
             guess: 0,
             haveWon: correct,
-            target: getRandomInt(),
         });
     }
 
