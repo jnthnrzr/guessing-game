@@ -11,7 +11,8 @@ class Hint extends React.Component {
     }
 
     getTrivia(guess) {
-        const url = `http://numbersapi.com/${guess}/trivia`;
+        // Use CORS to use https for NumbersAPI query.
+        const url = `https://cors-anywhere.herokuapp.com/http://numbersapi.com/${guess}/trivia`;
         fetch(url)
             .then((resp) => resp.text())
             .then((data => this.setState({ trivia: data })))
