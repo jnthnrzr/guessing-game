@@ -1,19 +1,53 @@
 import React from 'react';
 import './Hint.css';
 
-function Hint(props) {
-    const { guess, target, haveWon } = props;
-    const guessHeader = haveWon ? "Answer: " : "Last Guess: ";
-    const guessLessThanTarget = (guess < target);
-    const hint = haveWon ? "\n" : (guessLessThanTarget ? "Too Low" : "Too High");
+class Hint extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            trivia: "",
+        };
+        this.getTrivia = this.getTrivia.bind(this);
+    }
 
-    return (
-        <div className="hint">
-            {guessHeader}
-            {guess}<br/>
-            {hint}
-        </div>
-    );
+    getTrivia(guess) {
+        const url = `http://numbersapi.com/${guess}/trivia`;
+        fetch(url)
+            .then((resp) => resp.text())
+            .then((data => this.setState({ trivia: data })))
+            .catch((error) => console.log(error));
+    }
+
+    componentDidMount() {
+        const { guess } = this.props;
+        this.getTrivia(guess);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (this.props.guess !== nextProps.guess) {
+            const { guess } = nextProps;
+            this.getTrivia(guess);
+        }
+    }
+
+    render() {
+        const { haveWon, guess, target } = this.props;
+        const { trivia } = this.state;
+        const guessHeader = haveWon ? "Answer: " : "Last Guess: ";
+        const triviaHeader = "Did You Know:";
+
+        const guessLessThanTarget = (guess < target);
+        const hint = haveWon ? "\n" : (guessLessThanTarget ? "Too Low" : "Too High");
+        return (
+            <div className="hint">
+                {guessHeader}
+                {guess}<br/>
+                {hint}<br/><br/>
+                {trivia !== "" && triviaHeader}<br/>
+                {trivia}<br/>
+            </div>
+        );
+    }
 }
 
 export default Hint;
