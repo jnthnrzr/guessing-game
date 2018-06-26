@@ -41,9 +41,7 @@ class Hint extends React.Component {
         const hint = haveWon ? "\n" : (guessLessThanTarget ? "Too Low" : "Too High");
         return (
             <div className="hint">
-                {guessHeader}
-                {guess}<br/>
-                {hint}<br/>
+                {guessHeader} {guess} ({hint})<br/>
                 {trivia !== "" && triviaHeader}<br/>
                 {trivia}<br/>
             </div>
