@@ -39,7 +39,9 @@ class App extends React.Component {
     onNumBtnClick(number) {
         const { guess } = this.state;
         const newGuess = guess ? (guess * 10 + number) : number;
-        this.setState({ guess: newGuess });
+        if (newGuess <= 100) {
+            this.setState({ guess: newGuess });
+        }
     }
 
     onClrBtnClick() {
@@ -68,6 +70,7 @@ class App extends React.Component {
     render() {
         const { guess, lastGuess, target, haveWon, iteration } = this.state;
         const firstTry = iteration === 0;
+        const outOfTries = iteration === 10;
         const buttonHandlers = {
             onNumBtnClick: this.onNumBtnClick,
             onEnterBtnClick: this.onEnterBtnClick,
@@ -83,8 +86,8 @@ class App extends React.Component {
                 </div>
 
                 <div className="input">
-                    {!haveWon && <NumPad guess={guess} buttonHandlers={buttonHandlers} iteration={iteration} />}
-                    {haveWon && <Reload />}
+                    {!haveWon && !outOfTries && <NumPad guess={guess} buttonHandlers={buttonHandlers} iteration={iteration} />}
+                    {(haveWon || outOfTries) && <Reload />}
                 </div>
 
             </div>
