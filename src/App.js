@@ -28,8 +28,8 @@ class App extends React.Component {
             iteration: 0,
             haveWon: false,
             target: getRandomInt(),
-            guess: null,
-            lastGuess: null,
+            guess: 0,
+            lastGuess: 0,
         };
         this.onNumBtnClick = this.onNumBtnClick.bind(this);
         this.onClrBtnClick = this.onClrBtnClick.bind(this);
