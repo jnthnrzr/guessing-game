@@ -43,7 +43,7 @@ class Hint extends React.Component {
             <div className="hint">
                 {guessHeader}
                 {guess}<br/>
-                {hint}<br/><br/>
+                {hint}<br/>
                 {trivia !== "" && triviaHeader}<br/>
                 {trivia}<br/>
             </div>

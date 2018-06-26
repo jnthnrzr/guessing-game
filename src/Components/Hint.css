@@ -1,7 +1,8 @@
 .hint {
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
     order: 1;
-    padding: 2em;
+    padding: 1em;
+    font-size: 0.5rem;
     color: darkred;
 }

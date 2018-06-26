@@ -1,29 +1,28 @@
 .button {
-    --size: 2.25em;
-    border: 1px solid black;
-    border-radius: 100%;
-    background-color: #d5d5d5;
-    color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: snow;
+    color: #000;
     font-size: 1.25em;
-    margin: 1px 1px;
+    margin: 2px;
+
+    --size: 2.25em;
     width: var(--size);
     height: var(--size);
 }
 
 .clear {
-    background-color: #f68f24;
+    background-color: #FF8A65;
+    color: black;
 }
 
 .enter {
-    background-color: #00701a;
-}
-
-.num-button {
-    background-color: silver;
+    background-color: #8BC34A;
+    color: #000;
 }
 
 .clear:hover {
-    background: #ffae59;
+    background: #FFAB91;
 }
 
 .num-button:hover {
@@ -31,7 +30,7 @@
 }
 
 .enter:hover {
-    background: green;
+    background: #AED581;
 }
 
 button:focus {
