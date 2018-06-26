@@ -15,7 +15,7 @@ const getRandomInt = (min = 0, max = 100) => {
 
 const Reload = () => (
     <div className="reload">
-        <a href="/">
+        <a href="https://jnthnrzr.github.io/guessing-game">
             <button>Reset &#x21bb;</button>
         </a>
     </div>
